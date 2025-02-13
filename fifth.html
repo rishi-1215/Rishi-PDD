@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+            padding: 20px;
+        }
+
+        .rules-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .rules-container h2 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .rules-container p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .rules-container h3 {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .rules-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #444;
+        }
+
+        .rules-container li {
+            margin-bottom: 10px;
+        }
+
+        .checkbox-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .checkbox-container label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons button {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .buttons button.cancel {
+            background: linear-gradient(135deg, #ff5f6d, #ffc371);
+        }
+
+        .buttons button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .buttons button:active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+    <script>
+        function redirectToVote() {
+            const checkbox = document.getElementById('agreeCheckbox');
+            if (checkbox.checked) {
+                window.location.href = "headboy.php"; // Redirects to the voting page
+            } else {
+                alert('Please agree to the rules before proceeding.');
+            }
+        }
+
+        function redirectToSignin() {
+            window.location.href = "signin.html"; // Redirects to the sign-in page
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>VOTECONNECT</h1>
+    </header>
+    <main>
+        <div class="rules-container">
+            <h2>This election is being conducted by school.</h2>
+            <p>
+                You, as being a student, are allowed to vote. Please take the following steps in order to cast a valid vote.
+                You are requested to cast your vote based on your own decision and not by being pressurized or terrorized by someone.
+                If someone threatens you for making a voting decision, please contact the given helpline numbers.
+            </p>
+            <h3>Steps -</h3>
+            <ul>
+                <li>Stay in the frame of your camera alone and with sufficient lighting for the entire duration.</li>
+                <li>Have Security Keys with you as you would require them to proceed.</li>
+                <li>You are allowed to make only one vote per election.</li>
+                <li>You are allowed to choose only one candidate per election.</li>
+                <li>Candidates' information is available on the page.</li>
+                <li>Make sure that you are selecting your desired candidate by confirming the name and symbol on the screen.</li>
+                <li>After selecting the candidate, make sure to submit the vote.</li>
+                <li>The result will be announced after 5 days of the election being completed.</li>
+            </ul>
+            <div class="checkbox-container">
+                <input type="checkbox" id="agreeCheckbox">
+                <label for="agreeCheckbox">I agree to the above rules.</label>
+            </div>
+            <div class="buttons">
+                <button onclick="redirectToVote()">Vote Now</button>
+                <button class="cancel" onclick="redirectToSignin()">Cancel</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

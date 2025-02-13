@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2A2A3B;
+            color: #FFFFFF;
+        }
+
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            background-color: #0A0A23;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+
+        .navbar a.active {
+            border-bottom: 2px solid #FFFFFF;
+        }
+
+        .vote-btn {
+            background-color: #1E6ED6;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .vote-btn:hover {
+            background-color: #1458A6;
+        }
+
+        .profile {
+            display: flex;
+        }
+
+        .profile-pic {
+            text-align: center;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-pic img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .change-pic-btn {
+            background-color: #1E6ED6;
+            color: #FFFFFF;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .info h2, .info p {
+            margin: 8px 0;
+        }
+
+        .info span {
+            color: #B0B0B0;
+        }
+
+        .edit-profile-btn {
+            display: inline-block;
+            background-color: #1E6ED6;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #1458A6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="active">Personal Info</a>
+            <a href="#">Elections</a>
+            <a href="#">Contact</a>
+            <button class="vote-btn">Vote</button>
+        </div>
+        <div class="profile">
+            <div class="profile-pic">
+                <img src="D:\Pictures\vote 5.jpg" alt="Profile Picture">
+                <button class="change-pic-btn">Change profile picture</button>
+            </div>
+            <div class="info">
+                <h2>Name: <span>John Doe</span></h2>
+                <p>Father's / Mother's Name: <span>Papa John Doe</span></p>
+                <p>Age: <span>19</span></p>
+                <p>Mobile Number: <span>+91 9191919190</span></p>
+                <p>Email: <span>john.doe@gmail.com</span></p>
+                <p>Aadhar Number: <span>6100 4090 9126 0909</span></p>
+                <p>Address: <span>XYZ, Street No. 92, Gurgaon, Uttar Pradesh, 110021</span></p>
+                <p>Eligible: <span>True</span></p>
+                <p>Verified: <span>True</span></p>
+                <button class="edit-profile-btn">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

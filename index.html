@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote Connect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(to right, #66aaff, #00aaff);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin: 0 12px;
+      background-color: #007bff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    .hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  background: hsl(188, 43%, 50%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; /* Add gap below the navbar */
+  margin-bottom: 20px; /* Add gap above the footer */
+}
+
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 50%;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-family: 'Arial Black', sans-serif;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .hero .emergency-btn {
+      background-color: rgb(10, 233, 254);
+      color: #333;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero .emergency-btn:hover {
+      background-color:rgb(61, 226, 255);
+      transform: scale(1.1);
+    }
+
+    .voting-image {
+      max-width: 45%;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer {
+      width: 100%;
+      background: linear-gradient(135deg, #A7C7E7, #B5D8E9);
+      color: #333;
+      text-align: center;
+      padding: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <h1>VOTECONNECT</h1>
+      <div class="nav-buttons">
+        <a href="contact.php" class="contact-btn">Contact Us</a>
+        <a href="about.html" class="about-btn">About</a>
+        <a href="signin.html" class="login-btn">Login</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h2>WELCOME TO VOTECONNECT</h2>
+        <h3>Be a part of the Decision !</h3>
+        <a href="signin.html" class="emergency-btn">Vote now</a>
+      </div>
+      <img src="uploads\voteconnect logo.webp" class="voting-image" alt="Voting Image">
+    </section>
+
+    <div class="footer">
+      VoteConnect 2024® - All Rights Reserved | <a href="about.html">About Us</a>
+    </div>
+  </div>
+</body>
+
+</html>

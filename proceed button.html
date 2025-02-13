@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 600px;
+            padding: 50px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+        h2 {
+            font-size: 18px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .content {
+            border: 1px solid #87CEEB;
+            padding: 15px;
+            background-color: #F0F8FF;
+        }
+        .steps {
+            margin: 15px 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .checkbox {
+            margin-top: 10px;
+        }
+        .buttons {
+            margin-top: 15px;
+            text-align: right;
+        }
+        .buttons button {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .buttons .cancel {
+            background-color: #ccc;
+            color: #333;
+            margin-right: 10px;
+        }
+        .buttons .proceed {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="instructions" class="container">
+    <h2>This election is being conducted by the school.</h2>
+    <div class="content">
+        <p>You, as being a student u are allowed to vote. Please take the following steps in order to cast a valid vote. You are requested to cast vote on your own decision and not by being pressurized or terrorized by someone. If someone threatens you for making a voting decision please contact the given helpline numbers.</p>
+        <p><strong>Steps -</strong></p>
+        <ul class="steps">
+            <li>Stay in the frame of your camera alone and with sufficient lighting for the entire duration.</li>
+            <li>Have Security Keys with you as you would require it to proceed.</li>
+            <li>You are allowed to make only one vote per election.</li>
+            <li>You are allowed to choose only one candidate per election.</li>
+            <li>Candidates information are available on the page.</li>
+            <li>Make sure that you are selecting your wanted candidate by confirming the name and symbol on the screen.</li>
+            <li>After selecting the candidates make sure to submit the vote.</li>
+            <li>Result will be announced after 5 days of election being completed.</li>
+            <li>You can verify your vote after the election results are announced.</li>
+        </ul>
+        <div class="checkbox">
+            <input type="checkbox" id="agree">
+            <label for="agree">I understand and will follow above steps.</label>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="cancel">Cancel</button>
+        <button class="proceed" onclick="showFeatures()">Proceed</button>
+    </div>
+</div>
+
+<div id="features" style="display: none;">
+    <!-- Features Page HTML -->
+    <div class="container">
+        <div class="title">Features</div>
+        <div class="features-list">
+            <div class="feature-item">
+                <img src="https://img.icons8.com/material-sharp/24/000000/lock--v1.png" alt="Lock Icon">
+                Secured by 256 bit encryption
+            </div>
+            <div class="feature-item">
+                <img src="https://img.icons8.com/ios-filled/24/000000/ethereum.png" alt="Ethereum Icon">
+                Backed by ethereum based technology
+            </div>
+            <div class="feature-item">
+                <img src="https://img.icons8.com/ios-filled/24/000000/checked-checkbox.png" alt="Verifiable Icon">
+                Verifiable transactions
+            </div>
+            <div class="feature-item">
+                <img src="https://img.icons8.com/material-sharp/24/000000/thumb-up.png" alt="Easy Icon">
+                Easy to use
+            </div>
+            <div class="feature-item">
+                <img src="https://img.icons8.com/material-sharp/24/000000/money.png" alt="Cheaper Icon">
+                Cheaper than ballot voting system
+            </div>
+            <div class="feature-item">
+                <img src="https://img.icons8.com/ios-filled/24/000000/speed.png" alt="Faster Icon">
+                Faster voting process
+            </div>
+        </div>
+<button class="vote-button">Vote</button>  
+    </div>
+</div>
+ <script>
+    function showFeatures() {
+        // Check if the checkbox is checked
+        if (document.getElementById("agree").checked) {
+            document.getElementById("instructions").style.display = "none";
+            document.getElementById("features").style.display = "block";
+        } else {
+            alert("Please agree to the terms before proceeding.");
+        }
+    }
+</script>
+
+</body>
+</html>

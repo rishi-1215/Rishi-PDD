@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <style>
+    /* Basic styling and reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+    }
+
+    .page-title {
+      text-align: center;
+      margin: 20px;
+      color: #444;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0a0e27;
+      border-radius: 8px;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .illustration {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .illustration img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .form-container {
+      flex: 1;
+      padding: 20px;
+      color: #ffffff;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    .form-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-container input {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .form-container button {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #1a73e8;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #155ab4;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Registration Page</h1>
+  <div class="container">
+    <div class="illustration">
+      <!-- Illustration image -->
+      <img src="D:\Pictures\vote 2.jpg" alt="Voting illustration">
+    </div>
+    <div class="form-container">
+      <h2>Registration Form</h2>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Date Of Birth" required>
+        <input type="text" placeholder="Father's/Mother's Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Mobile No." required>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Re-enter Password" required>
+        <input type="text" placeholder="Aadhar Number" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

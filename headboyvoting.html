@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Today</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: skyblue;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar h1 {
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+
+        /* Form, Rules, and Voting Sections */
+        .form-container, .rules-container, .voting-container, .instructions-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        .form-container.active, .rules-container.active, .voting-container.active, .instructions-container.active {
+            display: flex;
+        }
+        .form-box, .rules-box, .instructions-box, .voting-container {
+            text-align: center;
+        }
+        .form-box h2, .rules-box h2, .instructions-container h2, .voting-container h1 {
+            margin-bottom: 20px;
+        }
+        .form-box input, .form-box button, .rules-button, .submit-button, .agree-button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-box button, .rules-button, .submit-button, .agree-button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .form-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Voting Table Styles */
+        .voting-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .voting-table th, .voting-table td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+        .voting-table th {
+            background-color: #333;
+            color: #ffffff;
+        }
+        .voting-table td {
+            background-color: #ddd;
+            color: #333;
+        }
+        .symbol-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .symbol-container span {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        .symbol-image {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Instructions Content */
+        .content {
+            border: 1px solid #87CEEB;
+            padding: 15px;
+            background-color: #F0F8FF;
+            text-align: left;
+        }
+        .steps {
+            margin: 15px 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .checkbox {
+            margin-top: 10px;
+        }
+        .buttons {
+            margin-top: 15px;
+            text-align: right;
+        }
+        .cancel {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1>Vote Today</h1>
+        </nav>
+
+        <!-- User Registration Form Section -->
+        <section class="form-container active" id="register">
+            <div class="form-box">
+                <h2>User Registration</h2>
+                <form onsubmit="showInstructions(event)">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Sign In</button>
+
+                    <div class="form-link">
+                        Register Now? <a href="userreg.html">Reg now In</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Instructions Section -->
+        <section class="instructions-container" id="instructions">
+            <h2>This election is being conducted by school.</h2>
+            <div class="content">
+                <p>You, as being a student are allowed to vote. Please take the following steps in order to cast a valid vote. You are requested to cast vote on your own decision and not by being pressurized or terrorized by someone. If someone threatens you for making a voting decision please contact the given helpline numbers.</p>
+                <p><strong>Steps -</strong></p>
+                <ul class="steps">
+                    <li>Stay in the frame of your camera alone and with sufficient lighting for the entire duration.</li>
+                    <li>Have Security Keys with you as you would require it to proceed.</li>
+                    <li>You are allowed to make only one vote per election.</li>
+                    <li>You are allowed to choose only one candidate per election.</li>
+                    <li>Candidates information are available on the page.</li>
+                    <li>Make sure that you are selecting your wanted candidate by confirming the name and symbol on the screen.</li>
+                    <li>After selecting the candidates make sure to submit the vote.</li>
+                    <li>Result will be announced after 5 days of election being completed.</li>
+                    <li>You can verify your vote after the election results are announced.</li>
+                </ul>
+                <div class="checkbox">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I understand and will follow above steps.</label>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="cancel" onclick="cancelInstructions()">Cancel</button>
+                <button class="agree-button" onclick="proceedToVoting()">Vote Now</button>
+            </div>
+        </section>
+
+        <!-- Voting Section -->
+        <section class="voting-container" id="vote">
+            <div class="logo-container">
+                <img src="images/Screenshot 2024-11-13 105449.png" alt="Head Boy Logo" style="width: 50px;">
+            </div>
+            <h1>HEAD BOY</h1>
+            <table class="voting-table">
+                <tr>
+                    <th>Name of the candidate</th>
+                    <th>Symbol</th>
+                    <th>Vote</th>
+                </tr>
+                <tr>
+                    <td>Hari</td>
+                    <td class="radio-cell">
+                        <label for="hari">
+                            <div class="symbol-container">
+                                <span>Flag</span>
+                                <img src="images/Screenshot 2024-11-13 105507.png" alt="Flag Symbol" class="symbol-image">
+                            </div>
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" id="hari" name="vote" value="hari">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ben</td>
+                    <td class="radio-cell">
+                        <label for="ben">
+                            <div class="symbol-container">
+                                <span>Torch</span>
+                                <img src="images/Screenshot 2024-11-13 105515.png" alt="Torch Symbol" class="symbol-image">
+                            </div>
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" id="ben" name="vote" value="ben">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hemu</td>
+                    <td class="radio-cell">
+                        <label for="hemu">
+                            <div class="symbol-container">
+                                <span>Bow and Arrow</span>
+                                <img src="images/Screenshot 2024-11-13 105523.png" alt="Bow and Arrow Symbol" class="symbol-image">
+                            </div>
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" id="hemu" name="vote" value="hemu">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ram</td>
+                    <td class="radio-cell">
+                        <label for="ram">
+                            <div class="symbol-container">
+                                <span>Car</span>
+                                <img src="images\car.jpg" alt="Car Symbol" class="symbol-image">
+                            </div>
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" id="ram" name="vote" value="ram">
+                    </td>
+                </tr>
+            </table>
+            <button class="submit-button">Submit Vote</button>
+        </section>
+    </div>
+
+    <script>
+        function showInstructions(event) {
+            event.preventDefault();
+            document.getElementById('register').classList.remove('active');
+            document.getElementById('instructions').classList.add('active');
+        }
+
+        function proceedToVoting() {
+            const checkbox = document.getElementById('agree');
+            if (checkbox.checked) {
+                document.getElementById('instructions').classList.remove('active');
+                document.getElementById('vote').classList.add('active');
+            } else {
+                alert("Please agree to the instructions before proceeding.");
+            }
+        }
+
+        function cancelInstructions() {
+            document.getElementById('instructions').classList.remove('active');
+            document.getElementById('register').classList.add('active');
+        }
+    </script>
+</body>
+</html>

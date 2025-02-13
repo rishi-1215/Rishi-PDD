@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    /* General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: linear-gradient(to bottom, #f0f8ff, #dfe9f3);
+      color: black;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    /* Left Section for VOTECONNECT */
+    .navbar .left {
+      flex: 1;
+    }
+
+    .navbar .left h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Right Section for Buttons */
+    .navbar .right {
+      display: flex;
+      gap: 50px;
+      justify-content: flex-end;
+      flex: 2;
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .navbar a:hover {
+      background-color: #00bfff;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+      background: hsl(188, 43%, 50%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 50%;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-family: 'Arial Black', sans-serif;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+    /* Enhanced Feedback Table Styles */
+    .container table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  background-size: cover; /* Ensure the image covers the table's background */
+  background-position: center; /* Center the image inside the table */
+  background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+}
+
+.container table thead {
+  background: linear-gradient(135deg, #00bfff, #1e90ff);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.container table thead th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.container table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for rows */
+}
+
+.container table tbody tr:hover {
+  background-color: #f1f9ff;
+}
+
+.container table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.container table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e90ff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial Black', sans-serif;
+}
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 100px);
+      margin-top: 20px;
+    }
+
+    .container img {
+      max-width: 80%;
+      max-height: 60vh;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      object-fit: contain;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .voting-image {
+      max-width: 45%;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer {
+      width: 100%;
+      background: linear-gradient(135deg, #A7C7E7, #B5D8E9);
+      color: #333;
+      text-align: center;
+      padding: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: auto;
+    }
+
+    .reserved-container {
+      display: inline-block;
+      position: relative;
+    }
+
+    .reserved-symbol {
+      font-size: 2rem;
+      display: block;
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+  <script>
+    function showImage() {
+  const imageContainer = document.querySelector('.hero'); // Hero section
+  const feedbackContainer = document.querySelector('.container'); // Feedback table container
+
+  // Reset the container content to display the default hero content
+  feedbackContainer.innerHTML = `
+    <section class="hero">
+      <div class="hero-content">
+        <h2>WELCOME TO VOTECONNECT</h2>
+        <h3>Be a part of the Decision!</h3>
+      </div>
+      <img src="uploads/voteconnect logo.webp" class="voting-image" alt="Voting Image">
+    </section>
+  `;
+
+  imageContainer.classList.remove('hidden');
+}
+
+  
+    function showFeedback() {
+      console.log('Fetching feedback...');
+      fetch('backend/fetch_feedback.php')
+        .then(response => {
+          console.log('Response status:', response.status);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Fetched data:', data);
+          displayFeedbackTable(data);
+        })
+        .catch(error => {
+          console.error('Error fetching feedback:', error);
+          alert('Failed to fetch feedback. Check console for details.');
+        });
+    }
+  
+    function displayFeedbackTable(feedback) {
+      const container = document.querySelector('.container');
+      container.innerHTML = `
+        <h2>Feedback</h2>
+        <table border="1" cellspacing="0" cellpadding="10">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>Submitted At</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${feedback
+              .map(item => `
+                <tr>
+                  <td>${item.id}</td>
+                  <td>${item.name}</td>
+                  <td>${item.email}</td>
+                  <td>${item.message}</td>
+                  <td>${item.submitted_at}</td>
+                </tr>
+              `)
+              .join('')}
+          </tbody>
+        </table>
+      `;
+    }
+  </script>
+  
+</head>
+<body>
+  <div class="navbar">
+    <div class="right">
+      <h1>VOTECONNECT</h1>
+      <a href="#" onclick="showImage()">Home</a>
+      <a href="candidate.php">Candidates</a>
+      <a href="view_votes.php">View Votes</a>
+      <a href="#" onclick="showFeedback()">View Feedback</a>
+      <a href="index.html">Logout</a>
+    </div>
+  </div>
+
+  
+  </body>
+  
+
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>WELCOME TO VOTECONNECT</h2>
+        <h3>Be a part of the Decision!</h3>
+      </div>
+      <img src="uploads/voteconnect logo.webp" class="voting-image" alt="Voting Image">
+    </section>
+    <div id="candidateForm" class="hidden">
+      <form action="backend/submit_addcandidate.php" method="post" enctype="multipart/form-data">
+        <h2>Add New Candidate</h2>
+        <label for="candidateName">Candidate Name:</label>
+        <input type="text" id="candidateName" name="candidateName" required>
+
+        <label for="candidatePosition">Position:</label>
+        <select id="candidatePosition" name="candidatePosition" required>
+          <option value="" disabled selected>Select Position</option>
+          <option value="headboy">Head Boy</option>
+          <option value="headgirl">Head Girl</option>
+          <option value="sportshead">Sports Head</option>
+          <option value="culturalshead">Culturals Head</option>
+        </select>
+
+        <label for="candidateSymbol">Candidate Symbol (Image):</label>
+        <input type="file" id="candidateSymbol" name="candidateSymbol" accept="image/*" required>
+
+        <button type="submit" name="submit">Add Candidate</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="reserved-container"></div>
+    VoteConnect 2024® - All Rights Reserved | <a href="about.html">About Us</a>
+  </div>
+</body>
+</html> 

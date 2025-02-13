@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #0a192f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .illustration {
+            flex: 1;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .illustration img {
+            width: 100%;
+            height: auto;
+        }
+
+        .login-form {
+            flex: 1;
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-form h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #0066ff;
+        }
+
+        .forgot-password {
+            display: block;
+            color: #0066ff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #0052cc;
+        }
+
+        .register-link {
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #0066ff;
+            text-decoration: none;
+        }
+
+        .lock-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #0066ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .lock-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+            }
+            
+            .illustration {
+                display: none;
+            }
+
+            .login-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="illustration">
+            <img src="D:\Pictures\vote 3.jpg" alt="Login illustration">
+        </div>
+        <div class="login-form">
+            <div class="lock-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4z"/>
+                </svg>
+            </div>
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <button type="submit" class="login-btn">LOGIN</button>
+                <div class="register-link">
+                    Not a user? <a href="#">Register now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 700px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-right: 20px;
+            position: relative;
+        }
+        .title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 2px;
+            height: 100%;
+            background-color: #1E90FF;
+        }
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #333;
+        }
+        .feature-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .vote-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .vote-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">Features</div>
+    <div class="features-list">
+        <div class="feature-item">
+            <img src="https://img.icons8.com/material-sharp/24/000000/lock--v1.png" alt="Lock Icon">
+            Secured by 256 bit encryption
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/24/000000/ethereum.png" alt="Ethereum Icon">
+            Backed by ethereum based technology
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/24/000000/checked-checkbox.png" alt="Verifiable Icon">
+            Verifiable transactions
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/material-sharp/24/000000/thumb-up.png" alt="Easy Icon">
+            Easy to use
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/material-sharp/24/000000/money.png" alt="Cheaper Icon">
+            Cheaper than ballot voting system
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/24/000000/speed.png" alt="Faster Icon">
+            Faster voting process
+        </div>
+    </div>
+    <button class="vote-button">Vote</button>
+</div>
+
+</body>
+</html>

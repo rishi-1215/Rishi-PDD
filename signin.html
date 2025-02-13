@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteConnect</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+            background-color: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .form-box {
+            display: flex;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .form-content {
+            padding: 40px;
+            width: 50%;
+        }
+
+        .form-content h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .form-content label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-content input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .form-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-content .form-link {
+            margin-top: 15px;
+            font-size: 14px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-content .form-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .image-container {
+            width: 50%;
+            background: url('images/voting.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #A7C7E7, #B5D8E9);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer {
+            width: 100%;
+            background: linear-gradient(135deg, #A7C7E7, #B5D8E9);
+            color: #333;
+            text-align: center;
+            padding: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: auto;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        VOTECONNECT
+    </div>
+
+    <div class="container">
+        <div class="form-box">
+            <div class="form-content">
+                <h1>Welcome to VoteConnect</h1>
+                <form id="signinForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="button" onclick="validateLogin()">Sign In</button>
+
+                    <div class="form-link">
+                        New user? <a href="userreg.html">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+            <div class="image-container"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        VoteConnect 2024® - All Rights Reserved | <a href="about.html">About Us</a>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "admin") {
+                // Redirect to admin.html if credentials match
+                window.location.href = "admin.html";
+            } else {
+                // Redirect to fifth.html for other users
+                window.location.href = "fifth.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
