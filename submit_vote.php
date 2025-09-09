@@ -11,18 +11,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $candidateId = intval($_POST['vote']);
+    // Ensure vote is passed safely
+    if (isset($_POST['vote'])) {
+        $candidateId = intval($_POST['vote']);
 
-    // Example: Increment vote count (you might need to create a votes table for better tracking)
-    $sql = "UPDATE candidates SET votes = votes + 1 WHERE id = $candidateId";
+        // Update vote count
+        $sql = "UPDATE candidates SET votes = votes + 1 WHERE id = $candidateId";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>
-        alert('Vote successfully submitted!');
-        window.location.href = '../headgirl.php';
-    </script>";
+        if ($conn->query($sql) === TRUE) {
+            // Redirect to headgirl.php with success flag
+            header("Location: ../headgirl.php?success=1");
+            exit();
+        } else {
+            // Redirect with error flag
+            header("Location: ../headgirl.php?error=" . urlencode($conn->error));
+            exit();
+        }
     } else {
-        echo "Error: " . $conn->error;
+        // If no candidate selected
+        header("Location: ../headgirl.php?error=" . urlencode("No candidate selected."));
+        exit();
     }
 
     $conn->close();
